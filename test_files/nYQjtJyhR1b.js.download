@@ -1,0 +1,8 @@
+;/*FB_PKG_DELIM*/
+
+__d("AdCenterUnifiedTwoColumnOverviewCardSectionQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="25553458447578707"}),null);
+__d("AdCenterUnifiedTwoColumnOverviewCardSectionQuery$Parameters",["AdCenterUnifiedTwoColumnOverviewCardSectionQuery_facebookRelayOperation"],(function(a,b,c,d,e,f){"use strict";a={kind:"PreloadableConcreteRequest",params:{id:b("AdCenterUnifiedTwoColumnOverviewCardSectionQuery_facebookRelayOperation"),metadata:{connection:[{count:"numCards",cursor:null,direction:"forward",path:["lwi","all_page_ads"]}]},name:"AdCenterUnifiedTwoColumnOverviewCardSectionQuery",operationKind:"query",text:null}};e.exports=a}),null);
+__d("AdCenterRootContentQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="7400009180094589"}),null);
+__d("CometProfileAdCenterRootContentQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="25247439588235658"}),null);
+__d("CometProfileAdCenterRootQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="8269586699724223"}),null);
+__d("PagesCometAdminRootQuery_facebookRelayOperation",[],(function(a,b,c,d,e,f){e.exports="7305328236211210"}),null);

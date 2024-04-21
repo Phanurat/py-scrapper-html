@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("QuestionPollTypeJSEnum",[],(function(a,b,c,d,e,f){a=Object.freeze({NON_POLL:0,CHOOSE_ONE:1,CHOOSE_MULTIPLE:2,RANKED:3,GIF_CHOOSE_ONE:4,IMAGE_CHOOSE_ONE:5,VISUAL_TEXT_CHOOSE_ONE:6,IMAGE_CHOOSE_MULTIPLE:7,PAGE_CHOOSE_MULTIPLE:8,MOST_LIKELY_TO:9,MEDIA_CHOOSE_ONE:10});f["default"]=a}),66);
+__d("QuestionResponseMethodUtils.facebook",["$InternalEnumUtils","QuestionPollTypeJSEnum"],(function(a,b,c,d,e,f,g){a=d("$InternalEnumUtils").createToJSEnum(c("QuestionPollTypeJSEnum"));b=d("$InternalEnumUtils").createFromJSEnum(c("QuestionPollTypeJSEnum"));g.toJSEnum=a;g.fromJSEnum=b}),98);
