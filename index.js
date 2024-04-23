@@ -1,23 +1,6 @@
-'use strict'
+const cheerio = require('cheerio');
 
-const Hapi = require('@hapi/hapi'); // ใช้ @hapi/hapi แทน hapi
-
-const init = async () => {
-    const server = Hapi.server({
-        port: 8088,
-        host: 'localhost'
-    });
-
-    server.route({
-        method: 'GET',
-        path: '/{appId}',
-        handler: (req, h) => { // เปลี่ยน reply เป็น h
-            return { message: 'Hello World' };
-        }
-    });
-
-    await server.start();
-    console.log(`Server running at: ${server.info.uri}`);
-};
-
-init();
+// ตัวอย่างการใช้ Cheerio
+const $ = cheerio.load('<h2 class="title">Hello world</h2>');
+$('h2.title').text('Cheerio!');
+console.log($.html());
