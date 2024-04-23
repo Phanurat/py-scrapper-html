@@ -1,8 +1,13 @@
 from selenium import webdriver
 
-PATH = "C:\Program Files (x86)\chromedriver.exe"
+# ตั้งค่าเส้นทางของ ChromeDriver
+CHROME_DRIVER_PATH = "C:\\Program Files (x86)\\chromedriver.exe"
 
-driver = webdriver.Chrome(PATH)
+# เรียกใช้ WebDriver ของ Chrome โดยไม่ต้องระบุ executable_path
+driver = webdriver.Chrome()
 
-driver.get("www.google.com")
+# เปิดเว็บไซต์ของ Google
+driver.get("http://www.google.com")
+print(driver.title)
+
 driver.quit()
