@@ -5,7 +5,7 @@ word_cut = ['เข้าสู่ระบบ', 'ลืมบัญชีใช
             'เพื่อเชื่อมต่อกับเพื่อน', 'เกี่ยวกับ', 'รูปภาพ', 'วิดีโอ', 'แนะนำตัว']
 
 # เปิดไฟล์ HTML
-with open('ลองวาป.txt', 'r', encoding='utf-8') as file:
+with open('scrap/ลองวาป.txt', 'r', encoding='utf-8') as file:
     html_content = file.read()
 
 # สร้างอ็อบเจ็กต์ BeautifulSoup
@@ -15,7 +15,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 printed_text = set()
 
 # เปิดไฟล์ output.txt ในโหมดการเขียน ('w') เพื่อเตรียมเขียนข้อมูล
-with open('output2.txt', 'w', encoding='utf-8') as f:
+with open('output/output2.txt', 'w', encoding='utf-8') as f:
     # ค้นหาและตัดคำในแท็ก <span>
     for paragraph in soup.find_all('span'):
         # ตรวจสอบว่าข้อความภายในแต่ละ <span> ไม่ซ้ำกับข้อความที่มีอยู่แล้ว และไม่ซ้ำกับ word_cut
