@@ -9,4 +9,5 @@ pip install selenium
 
 pip install pyppeteer
 
+pip install pythainlp
 
