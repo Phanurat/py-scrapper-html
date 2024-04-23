@@ -5,7 +5,7 @@ word_cut = ['เข้าสู่ระบบ', 'ลืมบัญชีใช
             'เพื่อเชื่อมต่อกับเพื่อน', 'เกี่ยวกับ', 'รูปภาพ', 'วิดีโอ', 'แนะนำตัว']
 
 # เปิดไฟล์ HTML
-with open('scrap/test.html', 'r', encoding='utf-8') as file:
+with open('scrap/test.txt', 'r', encoding='utf-8') as file:
     html_content = file.read()
 
 # สร้างอ็อบเจ็กต์ BeautifulSoup
