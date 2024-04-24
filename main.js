@@ -10,14 +10,19 @@ const fs = require('fs');
         });
         const page = await browser.newPage();
 
-        await page.goto('https://www.facebook.com/profile.php?id=61558499640631');
+        await page.goto('https://www.facebook.com/people/Gehenna-Gate/61558499640631/');
 
         await page.waitForSelector('body');
 
         // Evaluate script in the context of the page to remove the popup
         await page.evaluate(() => {
             // Replace the selector with the actual selector for the popup
-            const popupElement = document.querySelector('your-popup-selector');
+            const popupElement = document.querySelector("#mount_0_0_5o > div > div:nth-child(1) > div > div:nth-child(5) > div > div > div.x9f619.x1n2onr6.x1ja2u2z > div > div.x1uvtmcs.x4k7w5x.x1h91t0o.x1beo9mf.xaigb6o.x12ejxvf.x3igimt.xarpa2k.xedcshv.x1lytzrv.x1t2pt76.x7ja8zs.x1n2onr6.x1qrby5j.x1jfb8zj > div");
+            //#mount_0_0_5o > div > div:nth-child(1) > div > div:nth-child(5) > div > div > div.x9f619.x1n2onr6.x1ja2u2z > div > div.x1uvtmcs.x4k7w5x.x1h91t0o.x1beo9mf.xaigb6o.x12ejxvf.x3igimt.xarpa2k.xedcshv.x1lytzrv.x1t2pt76.x7ja8zs.x1n2onr6.x1qrby5j.x1jfb8zj > div > div
+            //path js script
+            // document.querySelector("#mount_0_0_5o > div > div:nth-child(1) > div > div:nth-child(5) > div > div > div.x9f619.x1n2onr6.x1ja2u2z > div > div.x1uvtmcs.x4k7w5x.x1h91t0o.x1beo9mf.xaigb6o.x12ejxvf.x3igimt.xarpa2k.xedcshv.x1lytzrv.x1t2pt76.x7ja8zs.x1n2onr6.x1qrby5j.x1jfb8zj > div")
+            
+            
             if (popupElement) {
                 popupElement.remove();
             }
@@ -34,7 +39,7 @@ const fs = require('fs');
             minifyJS: true
         });
 
-        fs.writeFileSync('scrap/test2.html', minifiedHTML);
+        fs.writeFileSync('scrap/test1.html', minifiedHTML);
 
         console.log('Webpage saved as compressed_webpage.html');
     } catch (error) {
