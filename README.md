@@ -15,3 +15,12 @@ npm install @hapi/hapi
 
 pip install pythainlp
 
+##USE Js node save files
+
+npm install puppeteer minify-html
+
+#if not install
+
+npm install -g npm@latest
+
+

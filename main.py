@@ -15,7 +15,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 printed_text = set()
 
 # เปิดไฟล์ output.txt ในโหมดการเขียน ('w') เพื่อเตรียมเขียนข้อมูล
-with open('output/output2.txt', 'w', encoding='utf-8') as f:
+with open('output/output3.txt', 'w', encoding='utf-8') as f:
     # ค้นหาและตัดคำในแท็ก <span>
     for paragraph in soup.find_all('span'):
         # ตรวจสอบว่าข้อความภายในแต่ละ <span> ไม่ซ้ำกับข้อความที่มีอยู่แล้ว และไม่ซ้ำกับ word_cut
