@@ -23,4 +23,7 @@ npm install puppeteer minify-html
 
 npm install -g npm@latest
 
+npm install axios
+
+
 
