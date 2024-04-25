@@ -2,7 +2,7 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 
 // อ่านไฟล์ HTML
-const html = fs.readFileSync("./scrap/test1.html");
+const html = fs.readFileSync("./scrap/facebook.html");
 
 // ใช้ Cheerio เพื่อแกะสลัก DOM
 const $ = cheerio.load(html);
@@ -22,4 +22,4 @@ $("a").each((index, element) => {
     fs.appendFileSync("get_link/output.txt", `Link ${index + 1}: ${link}\n`);
 });
 
-console.log("ข้อมูลถูกเขียนลงในไฟล์ get_link/output.txt เรียบร้อยแล้ว");
+console.log("Save File ==>  get_link/output.txt Finishing!!");
