@@ -9,14 +9,17 @@ const $ = cheerio.load(html);
 
 // ตัวอย่างการค้นหาและดึงข้อมูล
 const title = $("title").text(); // ดึงข้อความที่อยู่ใน tag <title>
-console.log("Title:", title);
 
-// ตัวอย่างการค้นหาและดึงข้อมูลจาก attribute
-const imageUrl = $("img").attr("src"); // ดึงค่าของ attribute src จาก tag <img>
-console.log("Image URL:", imageUrl);
+// เก็บข้อมูลลงในไฟล์ข้อความ (.txt)
+fs.writeFileSync("get_link/output.txt", `Title: ${title}\n`);
 
-// ตัวอย่างการใช้กับ loop
+// เพิ่มข้อมูลอื่น ๆ ลงในไฟล์ (.txt)
+const imageUrl = $("img").attr("src");
+fs.appendFileSync("get_link/output.txt", `Image URL: ${imageUrl}\n`);
+
 $("a").each((index, element) => {
     const link = $(element).attr("href");
-    console.log(`Link ${index + 1}:`, link);
+    fs.appendFileSync("get_link/output.txt", `Link ${index + 1}: ${link}\n`);
 });
+
+console.log("ข้อมูลถูกเขียนลงในไฟล์ get_link/output.txt เรียบร้อยแล้ว");

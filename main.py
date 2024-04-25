@@ -42,7 +42,7 @@ word_cut = ['เข้าสู่ระบบ', 'ลืมบัญชีใช
             'Photographer', 'yet', 'rated', '(0 reviews)','Ad','choices', 'Meta', '©']
 
 # เปิดไฟล์ HTML
-with open('scrap/test1.html', 'r', encoding='utf-8') as file:
+with open('scrap/Facebook.html', 'r', encoding='utf-8') as file:
     html_content = file.read()
 
 # สร้างอ็อบเจ็กต์ BeautifulSoup

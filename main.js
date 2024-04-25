@@ -7,11 +7,11 @@ const fs = require('fs');
         const browser = await puppeteer.launch({
             //userDataDir: 'C:\\Users\\Mr.D\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 2',
             //args: ['--no-sandbox', '--disable-setuid-sandbox']
-            executablePath: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+            executablePath: 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',
         });
         const page = await browser.newPage();
 
-        await page.goto('https://www.facebook.com/people/Gehenna-Gate/61558499640631/');
+        await page.goto('https://www.facebook.com/aseanfootball');
 
         await page.waitForSelector('body');
 
@@ -35,7 +35,7 @@ const fs = require('fs');
             minifyJS: true
         });
 
-        fs.writeFileSync('scrap/test1.html', minifiedHTML);
+        fs.writeFileSync('scrap/test2.html', minifiedHTML);
 
         console.log('Webpage saved as compressed_webpage.html');
     } catch (error) {
