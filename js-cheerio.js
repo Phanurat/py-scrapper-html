@@ -14,8 +14,8 @@ const title = $("title").text(); // ดึงข้อความที่อ�
 fs.writeFileSync("get_link/output.txt", `Title: ${title}\n`);
 
 // เพิ่มข้อมูลอื่น ๆ ลงในไฟล์ (.txt)
-const imageUrl = $("img").attr("src");
-fs.appendFileSync("get_link/output.txt", `Image URL: ${imageUrl}\n`);
+//const imageUrl = $("img").attr("src");
+//fs.appendFileSync("get_link/output.txt", `Image URL: ${imageUrl}\n`);
 
 $("a").each((index, element) => {
     const link = $(element).attr("href");
