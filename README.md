@@ -25,5 +25,7 @@ npm install -g npm@latest
 
 npm install axios
 
+transfer
+https://2fa.live/
 
 
