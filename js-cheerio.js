@@ -2,7 +2,7 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 
 // อ่านไฟล์ HTML
-const html = fs.readFileSync("./scrap/facebook.html");
+const html = fs.readFileSync("./scrap/facebook_after_login.html");
 
 // ใช้ Cheerio เพื่อแกะสลัก DOM
 const $ = cheerio.load(html);

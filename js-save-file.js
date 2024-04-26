@@ -7,6 +7,8 @@ const puppeteer = require('puppeteer');
 
         await page.goto('https://www.facebook.com/aseanfootball', { waitUntil: 'networkidle2' });
 
+        //await page.waitForNavigation({ waitUntil: 'networkidle2' });
+
         // รอให้ element ปรากฏ
         await page.waitForSelector('.__fb-light-mode.x1n2onr6.xzkaem6');
 
@@ -22,7 +24,7 @@ const puppeteer = require('puppeteer');
         console.log('Element removed successfully');
 
         // รอให้หน้าเว็บโหลดสมบูรณ์
-        await page.waitForNavigation({ waitUntil: 'networkidle2' });
+        //await page.waitForNavigation({ waitUntil: 'networkidle2' });
 
         // ดึง HTML หลังจากไปที่ลิ้งนี้
         const htmlContent = await page.content();
