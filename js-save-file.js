@@ -9,19 +9,26 @@ const puppeteer = require('puppeteer');
 
         //await page.waitForNavigation({ waitUntil: 'networkidle2' });
 
-        // รอให้ element ปรากฏ
-        await page.waitForSelector('.__fb-light-mode.x1n2onr6.xzkaem6');
+        // คลิกที่ปุ่ม "Close"
+        await page.click('[aria-label="Close"]');
+
+        // รอให้หน้าเว็บโหลดสมบูรณ์
+        await page.waitForTimeout(3000); // เพิ่มระยะเวลาในการรอตามที่เหมาะสม
+
+        // ดึง HTML หลังจากคลิกปุ่ม "Close"
+        //const htmlContent = await page.content();
+
 
         // ลบ element โดยใช้ evaluate ซึ่งจะทำให้ JavaScript ทำงานใน context ของหน้าเว็บ
-        await page.evaluate(() => {
+        /*await page.evaluate(() => {
             // เลือก element ที่ต้องการลบ แล้วลบออกไป
             const elementToRemove = document.querySelector('.__fb-light-mode.x1n2onr6.xzkaem6');
             if (elementToRemove) {
                 elementToRemove.remove();
             }
-        });
+        });*/
 
-        console.log('Element removed successfully');
+        //console.log('Close Button Successfully');
 
         // รอให้หน้าเว็บโหลดสมบูรณ์
         //await page.waitForNavigation({ waitUntil: 'networkidle2' });
