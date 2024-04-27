@@ -7,7 +7,7 @@ const fs = require('fs');
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
 
-        await page.goto('https://www.facebook.com/aseanfootball');
+        await page.goto('https://www.facebook.com/hashtag/%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%81');
 
         // รอให้ element ปรากฏ
         await page.waitForSelector('.__fb-light-mode.x1n2onr6.xzkaem6');
