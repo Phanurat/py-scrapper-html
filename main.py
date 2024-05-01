@@ -1,15 +1,10 @@
 from bs4 import BeautifulSoup
 from pythainlp.tokenize import word_tokenize
 
-word_cut = ['เข้าสู่ระบบ', 'ลืมบัญชีใช่ไหม', '·', 'แชร์กับ', 'สาธารณะ', 'สร้างบัญชีใหม่', 'เข้าสู่ระบบหรือสมัครใช้งาน',
-            'เพื่อเชื่อมต่อกับเพื่อน', 'เกี่ยวกับ', 'รูปภาพ', 'วิดีโอ', 'แนะนำตัว', 'Log in', 'Forgotten account?' ,'See more on Facebook', 'Email address or phone number',
-            'Forgotten password?', 'Create New Account', 'About', 'Photos', 'Videos', 'More', 'Intro', 'Page  Writer  Photographer',
-            'Bangkok, Thailand, Bangkok', '095 659 5973', 'paunavt55@gmail.com', 'Photos See All Photos', 'See All Photos', 'Privacy   Terms   Advertising   Ad choices    Cookies   More   Meta © 2024',
-            'Password', 'or', 'View more comments', 'Privacy', 'Terms', 'Advertising', 'Ad choices', 'Cookies', 'Meta © 2024', 'Page', 'Writer',
-            'Photographer', 'yet', 'rated', '(0 reviews)','Ad','choices', 'Meta', '©']
+word_cut = ['test']
 
 # เปิดไฟล์ HTML
-with open('scrap/facebook_after_login.html', 'r', encoding='utf-8') as file:
+with open('scrap/test_cut.html', 'r', encoding='utf-8') as file:
     html_content = file.read()
 
 # สร้างอ็อบเจ็กต์ BeautifulSoup
