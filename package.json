@@ -13,6 +13,7 @@
     "axios": "^1.6.8",
     "cheerio": "^1.0.0-rc.12",
     "hapi": "^18.1.0",
+    "html-minifier": "^4.0.0",
     "minify-html": "^0.0.2",
     "puppeteer": "^22.7.0"
   }

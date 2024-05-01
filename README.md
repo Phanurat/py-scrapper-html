@@ -28,4 +28,7 @@ npm install axios
 transfer
 https://2fa.live/
 
+npm install html-minifier
+
+
 

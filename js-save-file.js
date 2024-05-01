@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const { minify } = require('html-minifier'); // เพิ่มการนำเข้า html-minifier
+const fs = require('fs');
 
 (async () => {
     try {
@@ -8,21 +10,20 @@ const puppeteer = require('puppeteer');
         await page.goto('https://www.facebook.com/aseanfootball', { waitUntil: 'networkidle2' });
         await page.click('[aria-label="Close"]');
         
-        // ใช้เมธอด page.waitForTimeout() ใน Puppeteer แทน
-        await page.waitForTimeout(3000); 
+        // รอให้เห็นส่วนของเนื้อหาที่ต้องการ
+        await page.waitForSelector('body');
 
         const htmlContent = await page.content();
 
-        await browser.close();
-
-        const minifiedHTML = await minify(htmlContent, {
+        const minifiedHTML = minify(htmlContent, { // ใช้ฟังก์ชัน minify จาก html-minifier
             collapseWhitespace: true,
             conservativeCollapse: true,
             minifyCSS: true,
             minifyJS: true
         });
 
-        fs.writeFileSync('scrap/test_cut.html', minifiedHTML);;
+        fs.writeFileSync('scrap/test_cut.html', minifiedHTML);
+        await browser.close();
 
         console.log('Facebook page after login saved as facebook_after_login.html');
     } catch (error) {
