@@ -4,6 +4,10 @@ def get_link_page():
     link_page = entry.get()
     label_result.config(text="URL: " + link_page)
 
+def get_name_page():
+    #name_page = entry.get()
+    name_page_res.config(text="Page Name:" + name_page)
+
 # สร้างหน้าต่างหลัก
 root = tk.Tk()
 root.title("FB Scrapper")
@@ -17,7 +21,7 @@ entry = tk.Entry(root)
 entry.pack()
 
 # สร้างปุ่ม
-button = tk.Button(root, text="ยืนยัน", command=get_link_page)
+button = tk.Button(root, text="Scrapper", command=get_link_page)
 button.pack()
 
 # Label แสดงผลลัพธ์
