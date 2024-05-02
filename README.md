@@ -30,5 +30,13 @@ https://2fa.live/
 
 npm install html-minifier
 
+##
+# 1. run node js-save-file.js เพื่อ ดาวน์โหลดเนื้อหา tag html ลงใน scrap/test_cut.html
+# 2. run python main.py เพื่อทำการอ่าน tag แล้วลงใน output/output_post.txt
+# 3. run node js-cheerio.js ดึง element link ลง /get_link/output.txt
+# 4. run python py-cut-link.py โดย ต้องการ ให้ www.facebook.com/name-page/posts/idpost
+
+
+
 
 
