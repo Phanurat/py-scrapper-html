@@ -7,7 +7,7 @@ const fs = require('fs');
         const browser = await puppeteer.launch({ headless: false }); 
         const page = await browser.newPage();
 
-        await page.goto('https://www.facebook.com/aseanfootball', { waitUntil: 'networkidle2' });
+        await page.goto('https://www.facebook.com/onenews31', { waitUntil: 'networkidle2' });
         await page.click('[aria-label="Close"]');
         
         // รอให้เห็นส่วนของเนื้อหาที่ต้องการ
