@@ -16,7 +16,7 @@ const fs = require('fs');
         const htmlContent = await page.content();
 
         const minifiedHTML = minify(htmlContent, { // ใช้ฟังก์ชัน minify จาก html-minifier
-            collapseWhitespace: true,
+            collapseWhitespace: true,   
             conservativeCollapse: true,
             minifyCSS: true,
             minifyJS: true
