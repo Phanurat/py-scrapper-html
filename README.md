@@ -41,6 +41,7 @@ npm install html-minifier
 
 ## ประกอบส่วนต่างๆ ให้เป็น Program
 ## ทำ Line Notify API
+### ทำไลน์ notify Api in Group ไปแล้ว 
 
 
 
