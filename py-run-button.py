@@ -7,7 +7,7 @@ def run_script():
     subprocess.Popen(["python", "main.py"]).wait()
     subprocess.Popen(["node", "js-cheerio.js"]).wait()
     subprocess.Popen(["python", "py-cut-link.py"]).wait()
-    subprocess.Popen(["python", "py-send-line"]).wait()
+    #subprocess.Popen(["python", "py-send-line"]).wait()
 
 # สร้างหน้าต่างหลัก
 root = tk.Tk()
