@@ -7,25 +7,31 @@ const fs = require('fs');
         const browser = await puppeteer.launch({ headless: false }); 
         const page = await browser.newPage();
 
-        await page.goto('https://www.facebook.com/khaopodnewss', { waitUntil: 'networkidle2' });
+        await page.goto('https://www.facebook.com/aseanfootball', { waitUntil: 'networkidle2' });
         await page.click('[aria-label="Close"]');
         
         await page.waitForSelector('body');
 
-        setTimeout(async () => {
-            const htmlContent = await page.content();
-            const minifiedHTML = minify(htmlContent, {
-                collapseWhitespace: true,
-                conservativeCollapse: true,
-                minifyCSS: true,
-                minifyJS: true
-            });
+        await page.evaluate(() => {
+            // รอ 60 วินาที
+            return new Promise(resolve => setTimeout(resolve, 60000));
+        });
 
-            fs.writeFileSync('scrap/test_cut.html', minifiedHTML);
-            await browser.close();
+        // เลื่อน cursor ลง
+        await page.mouse.move(100, 100); // ปรับตำแหน่งตามที่ต้องการ
 
-            console.log('Facebook page after login saved as facebook_after_login.html');
-        }, 60000); // รอ 1 นาที (60,000 มิลลิวินาที) ก่อนที่จะบันทึกไฟล์
+        const htmlContent = await page.content();
+        const minifiedHTML = minify(htmlContent, {
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyCSS: true,
+            minifyJS: true
+        });
+
+        fs.writeFileSync('scrap/test_cut.html', minifiedHTML);
+        await browser.close();
+
+        console.log('Facebook page after login saved as facebook_after_login.html');
     } catch (error) {
         console.error('Error:', error);
     }
