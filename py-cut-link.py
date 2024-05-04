@@ -40,7 +40,7 @@ root = tk.Tk()
 root.title("Cut Links")
 
 # สร้าง Label แสดงข้อความ
-label = tk.Label(root, text="Enter the search string:", padx=20, pady=10)
+label = tk.Label(root, text="Enter the search string:", padx=200, pady=10)
 label.pack()
 
 # สร้างช่อง input สำหรับรับค่า search string
