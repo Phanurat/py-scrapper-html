@@ -12,13 +12,18 @@ const fs = require('fs');
         
         await page.waitForSelector('body');
 
-        await page.evaluate(() => {
-            // รอ 60 วินาที
-            return new Promise(resolve => setTimeout(resolve, 60000));
-        });
+        // เริ่มการเลื่อนลงทุก 1000 มิลลิวินาที (1 วินาที)
+        const scrollInterval = setInterval(async () => {
+            await page.evaluate(() => {
+                window.scrollBy(0, window.innerHeight); // เลื่อนลง
+            });
+        }, 1000);
 
-        // เลื่อน cursor ลง
-        await page.mouse.move(100, 100); // ปรับตำแหน่งตามที่ต้องการ
+        // รอเวลา 60 วินาที (1 นาที)
+        await new Promise(resolve => setTimeout(resolve, 60000));
+
+        // หยุดการเลื่อนหน้าเว็บหลังจากเวลาที่กำหนด (1 นาที)
+        clearInterval(scrollInterval);
 
         const htmlContent = await page.content();
         const minifiedHTML = minify(htmlContent, {
