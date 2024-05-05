@@ -1,21 +1,30 @@
-// อ่านข้อมูลจากไฟล์ link.json โดยใช้ fetch
-fetch('json_news/links.json')
-  .then(response => response.json())
-  .then(data => {
-    // ดึงข้อมูลลิงก์
-    const links = data.links;
+const puppeteer = require('puppeteer');
+const { minify } = require('html-minifier');
+const fs = require('fs');
 
-    // วนลูปผ่านทุก link
-    for (const linkName in links) {
-      if (links.hasOwnProperty(linkName)) {
-        const linkData = links[linkName];
-        const linkUrl = linkData.link;
+(async () => {
+    try {
+        const browser = await puppeteer.launch({ headless: false }); 
+        const page = await browser.newPage();
 
-        // ทำ process หรือการทำงานอื่น ๆ ที่ต้องการดำเนินการกับ linkUrl ที่นี่
-        console.log(`Processing link ${linkName}: ${linkUrl}`);
-      }
+        await page.goto('https://www.facebook.com/aseanfootball/posts/pfbid02FN5SCMi4HMprpsYERTMDHRkqYebKQ7tK9H5NAbLLgB3Htg2cdGANbWP5JRktahEGl', { waitUntil: 'networkidle2' });
+        await page.click('[aria-label="Close"]');
+        
+        await page.waitForSelector('body');
+
+        const htmlContent = await page.content();
+        const minifiedHTML = minify(htmlContent, {
+            collapseWhitespace: true,
+            conservativeCollapse: true,
+            minifyCSS: true,
+            minifyJS: true
+        });
+
+        fs.writeFileSync('html_post/post.html', minifiedHTML);
+        await browser.close();
+
+        console.log('Save HTML POST');
+    } catch (error) {
+        console.error('Error:', error);
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+})();
