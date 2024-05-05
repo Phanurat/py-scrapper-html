@@ -1,16 +1,20 @@
 import json
+import os
 
-# อ่านข้อมูลจากไฟล์ link.json
-file_path = "json_news/links.json"
-with open(file_path, "r") as json_file:
-    data = json.load(json_file)
+# อ่านข้อมูลจากไฟล์ link.txt
+file_path = "link_cut/link.txt"
+with open(file_path, "r") as link_file:
+    links = link_file.readlines()
 
-# ดึงข้อมูลลิงก์
-links = data["links"]
+# สร้างโฟลเดอร์ link_post ถ้ายังไม่มี
+if not os.path.exists("link_post"):
+    os.makedirs("link_post")
 
-# วนลูปผ่านทุก link
-for link_name, link_data in links.items():
-    link_url = link_data["link"]
-    
-    # ทำ process หรือการทำงานอื่น ๆ ที่ต้องการดำเนินการกับ link_url ที่นี่
-    print(f"Processing link {link_name}: {link_url}")
+# สร้างไฟล์ในโฟลเดอร์ link_post สำหรับแต่ละ link
+for i, link in enumerate(links, start=1):
+    link = link.strip()
+    file_name = f"link_post/link{i}.txt"
+    with open(file_name, "w") as output_file:
+        output_file.write(link)
+
+    print(f"ไฟล์ {file_name} ถูกสร้างเรียบร้อยแล้ว")
