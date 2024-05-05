@@ -43,6 +43,15 @@ npm install html-minifier
 ## ทำ Line Notify API
 ### ทำไลน์ notify Api in Group ไปแล้ว 
 
+# use working!!
+
+## run js-save-file.js => scrap/test_cut.html
+## run js-cheerio.js => get_link/output.txt
+## run py-cut-link.py => link_cut/link.txt
+## run py-process-link.py => link_post/link{i}.txt
+## run js-process-link.js => output/output{i}_post.txt
+## run py-send-link.py => to api line Notify
+
 
 
 
