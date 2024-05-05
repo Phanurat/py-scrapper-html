@@ -17,7 +17,7 @@ canonical_link_tag = soup.find('link', rel='canonical')
 title_tag = soup.find('title')
 
 # เขียนข้อมูลลงในไฟล์ output.txt
-with open('output/output.txt', 'w', encoding='utf-8') as f:
+with open('output/output_post.txt', 'w', encoding='utf-8') as f:
 
     # ตรวจสอบว่ามี tag <title> หรือไม่
     if title_tag:
